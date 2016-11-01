@@ -1,12 +1,15 @@
-{% set version = "1.1" %}
+{% set name = "monotonic" %}
+{% set version = "1.2" %}
+{% set md5 = "d14c93aabc3d6af25ef086b032b123cf" %}
 
 package:
-  name: monotonic
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/atdt/monotonic.git
-  git_tag: {{ version }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  md5: {{ md5 }}
 
 build:
   number: 0

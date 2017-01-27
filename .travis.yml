@@ -4,14 +4,14 @@
 language: generic
 
 os: osx
-osx_image: beta-xcode6.1
+osx_image: xcode6.4
 
 env:
   matrix:
     
     - CONDA_PY=27
-    - CONDA_PY=34
     - CONDA_PY=35
+    - CONDA_PY=36
   global:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
     - secure: "QLnDDq9Z7b9ox65zIcDc2CHfnuxzEO+92fKgglhs6mj6/YfyzFdeF5bAy+vk7MCz3Xc1ubCujNSp6+D+hjNKy9nUZPTk294x6oFMkFVVWCTeCWrXuihNRQErWIKkelXe78XIK7KtalPrLi89Yfdn+RI/pqd/+WdZPp9qnwMg/RwQcyvSlRLoEEp+hwD6NVkBKPGVng1ZD3FODjmKXTnQlrF10U1sXALy6DDQb43CvS+zvKsKgbfn5K/POEblx+ftuQi3BKixQXMNx6XP/W/oSqYMjUa3LYMIkrWHlr/JqcPRaOUMvscGPWjwdKKL87WEarlqxpEKJOGYi5/MUs+uSVXRLBp8v/unYkcVGhww5oN031ZLUgXcJ4zlCclwWFtDrgX/DyZEWn/TAQH8QS+co+iHKC/YRT1dJ8ycv9WgCjTuXtm4pbYL1S4WO3/aS0JVo/2p2XFsh39IO5iACUGL/EclVqkdIDIHOaCZE1WOXqEq5x7VrHBPxdYdJorn7le+XK5aW7s+VIskgBnXbs7Z3rDyThXYbWOPq2TNgpNjka4lEJI92fAu28Fbaiuja7rmu0dXE6l0AVHxplKAL3l0nT+A+cBJeNm31q6hStD60xvnZmaqFG8iZ8eJ6lPhJc/IOLtrdmus3g1SO0K9WpPWevrXvNvkEuc/6Pw8yKRfaI0="
@@ -19,18 +19,32 @@ env:
 
 before_install:
     # Remove homebrew.
-    - brew remove --force $(brew list)
-    - brew cleanup -s
-    - rm -rf $(brew --cache)
+    - |
+      echo ""
+      echo "Removing homebrew from Travis CI to avoid conflicts."
+      curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall > ~/uninstall_homebrew
+      chmod +x ~/uninstall_homebrew
+      ~/uninstall_homebrew -fq
+      rm ~/uninstall_homebrew
+
 
 install:
+    # Install Miniconda.
     - |
+      echo ""
+      echo "Installing a fresh version of Miniconda."
       MINICONDA_URL="https://repo.continuum.io/miniconda"
       MINICONDA_FILE="Miniconda3-latest-MacOSX-x86_64.sh"
       curl -L -O "${MINICONDA_URL}/${MINICONDA_FILE}"
       bash $MINICONDA_FILE -b
 
+    # Configure conda.
+    - |
+      echo ""
+      echo "Configuring conda."
       source /Users/travis/miniconda3/bin/activate root
+      conda config --remove channels defaults
+      conda config --add channels defaults
       conda config --add channels conda-forge
       conda config --set show_channel_urls true
       conda install --yes --quiet conda-forge-build-setup

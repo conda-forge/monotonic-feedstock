@@ -11,6 +11,18 @@ Summary: An implementation of time.monotonic() for Python 2 & Python 3.
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/monotonic-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/monotonic-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/monotonic-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/monotonic-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/monotonic-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/monotonic-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/monotonic/badges/version.svg)](https://anaconda.org/conda-forge/monotonic)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/monotonic/badges/downloads.svg)](https://anaconda.org/conda-forge/monotonic)
+
 Installing monotonic
 ====================
 
@@ -66,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/monotonic-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/monotonic-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/monotonic-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/monotonic-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/monotonic-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/monotonic-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/monotonic/badges/version.svg)](https://anaconda.org/conda-forge/monotonic)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/monotonic/badges/downloads.svg)](https://anaconda.org/conda-forge/monotonic)
 
 
 Updating monotonic-feedstock

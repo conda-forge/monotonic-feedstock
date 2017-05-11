@@ -3,7 +3,7 @@ About monotonic
 
 Home: https://github.com/atdt/monotonic
 
-Package license: Apache License Version 2.0
+Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 

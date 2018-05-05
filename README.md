@@ -14,14 +14,15 @@ Summary: An implementation of time.monotonic() for Python 2 & Python 3.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/monotonic-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/monotonic-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/monotonic-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/monotonic-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/monotonic-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/monotonic-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/monotonic-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/monotonic-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/monotonic/badges/version.svg)](https://anaconda.org/conda-forge/monotonic)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/monotonic/badges/downloads.svg)](https://anaconda.org/conda-forge/monotonic)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-monotonic-green.svg)](https://anaconda.org/conda-forge/monotonic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/monotonic.svg)](https://anaconda.org/conda-forge/monotonic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/monotonic.svg)](https://anaconda.org/conda-forge/monotonic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/monotonic.svg)](https://anaconda.org/conda-forge/monotonic) |
 
 Installing monotonic
 ====================

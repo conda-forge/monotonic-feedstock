@@ -3,9 +3,9 @@ About monotonic
 
 Home: https://github.com/atdt/monotonic
 
-Package license: Apache 2.0
+Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: An implementation of time.monotonic() for Python 2 & Python 3.
 

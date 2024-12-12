@@ -1,32 +1,32 @@
 {% set name = "monotonic" %}
-{% set version = "1.5" %}
-{% set sha256 = "23953d55076df038541e648a53676fb24980f7a1be290cdda21300b3bc21dfb0" %}
+{% set version = "1.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 3a55207bcfed53ddd5c5bae174524062935efed17792e9de2ad0205ce9ad63f7
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python >=3.6
+  host:
+    - python {{ python_min }}
+    - setuptools
     - pip
-
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
     - monotonic
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://github.com/atdt/monotonic
@@ -39,3 +39,4 @@ extra:
     - alimanfoo
     - anguslees
     - sodre
+    - synapticarbors

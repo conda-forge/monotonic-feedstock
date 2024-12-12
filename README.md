@@ -146,4 +146,5 @@ Feedstock Maintainers
 * [@alimanfoo](https://github.com/alimanfoo/)
 * [@anguslees](https://github.com/anguslees/)
 * [@sodre](https://github.com/sodre/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
